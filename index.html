@@ -4,61 +4,295 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Marc-Olivier Meunier - Product Lead CV</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
     <style>
-      body {
-        font-family: Arial, sans-serif;
-        line-height: 1.6;
-        background-color: #f4f4f4;
-        color: #333;
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
+      :root {
+        --primary: #2d46b9;
+        --gradient: linear-gradient(135deg, #2d46b9 0%, #1e90ff 100%);
+        --shadow: rgba(0, 0, 0, 0.1);
+      }
+
+      * {
+        box-sizing: border-box;
         margin: 0;
-        padding: 20px;
+        padding: 0;
       }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        line-height: 1.7;
+        background: #f0f2f5;
+        color: #2c3e50;
+        margin: 0;
+        padding: 30px 20px;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #f6f8ff 0%, #f0f2f5 100%);
+      }
+
       .container {
-        max-width: 800px;
+        max-width: 1000px;
         background: white;
-        padding: 20px;
+        padding: 50px;
         margin: 0 auto;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        border-radius: 8px;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px var(--shadow), 0 1px 3px rgba(0, 0, 0, 0.05);
+        position: relative;
+        overflow: hidden;
       }
-      h1,
-      h2 {
-        color: #0073e6;
+
+      .container::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background: var(--gradient);
       }
+
       h1 {
         text-align: center;
+        font-size: 3.2em;
+        margin-bottom: 15px;
+        background: var(--gradient);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        font-weight: 700;
+        letter-spacing: -1px;
       }
+
       .contact {
         text-align: center;
-        margin-bottom: 20px;
+        margin-bottom: 40px;
+        line-height: 2;
+        padding: 20px;
+        background: #f8faff;
+        border-radius: 15px;
+        transform: translateY(0);
+        transition: transform 0.3s ease;
       }
+
+      .contact:hover {
+        transform: translateY(-5px);
+      }
+
       .contact a {
-        color: #0073e6;
+        color: var(--primary);
         text-decoration: none;
+        padding: 5px 10px;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        position: relative;
       }
+
+      .contact a:hover {
+        background: var(--gradient);
+        color: white;
+      }
+
       .section {
-        margin-bottom: 20px;
+        margin-bottom: 45px;
+        padding: 25px;
+        border-radius: 15px;
+        background: white;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+        transition: transform 0.3s ease;
       }
+
+      .section:hover {
+        transform: translateY(-3px);
+      }
+
       .section h2 {
-        border-bottom: 2px solid #0073e6;
-        padding-bottom: 5px;
+        color: var(--primary);
+        font-size: 1.6em;
+        margin-bottom: 25px;
+        padding-bottom: 10px;
+        position: relative;
       }
-      .job-title {
-        font-weight: bold;
-        color: #0073e6;
+
+      .section h2::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50px;
+        height: 3px;
+        background: var(--gradient);
+        border-radius: 2px;
+        transition: width 0.3s ease;
       }
+
+      .section:hover h2::after {
+        width: 100px;
+      }
+
+      .job-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 15px;
+      }
+
+      .job-title-wrapper {
+        color: var(--primary);
+        font-size: 1.2em;
+        font-weight: 600;
+      }
+
+      .company-info {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #666;
+      }
+
+      .company-name {
+        font-weight: 500;
+      }
+
       .date {
         font-style: italic;
         color: #666;
+        font-size: 0.95em;
+        background: #f8faff;
+        padding: 3px 10px;
+        border-radius: 15px;
+        margin-left: 10px;
       }
+
       ul {
-        padding-left: 20px;
+        padding-left: 25px;
+        margin-top: 15px;
       }
+
+      ul li {
+        margin-bottom: 12px;
+        position: relative;
+        padding-left: 5px;
+      }
+
+      ul li::marker {
+        color: var(--primary);
+      }
+
       .footer {
         text-align: center;
-        margin-top: 20px;
-        font-size: 14px;
+        margin-top: 50px;
+        padding-top: 30px;
+        border-top: 1px solid #eee;
+        font-size: 0.9em;
         color: #666;
+      }
+
+      .footer a {
+        color: var(--primary);
+        text-decoration: none;
+        padding: 5px 15px;
+        border-radius: 20px;
+        transition: all 0.3s ease;
+      }
+
+      .footer a:hover {
+        background: var(--gradient);
+        color: white;
+      }
+
+      @media (max-width: 768px) {
+        body {
+          padding: 15px;
+        }
+        .container {
+          padding: 30px 20px;
+        }
+        h1 {
+          font-size: 2.5em;
+        }
+        .section {
+          padding: 20px;
+        }
+      }
+
+      /* Fancy animations for section entrance */
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .section {
+        animation: slideIn 0.5s ease forwards;
+        opacity: 0;
+      }
+
+      .section:nth-child(1) {
+        animation-delay: 0.1s;
+      }
+      .section:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      .section:nth-child(3) {
+        animation-delay: 0.3s;
+      }
+      .section:nth-child(4) {
+        animation-delay: 0.4s;
+      }
+      .section:nth-child(5) {
+        animation-delay: 0.5s;
+      }
+      .section:nth-child(6) {
+        animation-delay: 0.6s;
+      }
+
+      /* Skill tags styling */
+      .skill-tag {
+        display: inline-block;
+        padding: 5px 12px;
+        background: #f0f4ff;
+        border-radius: 15px;
+        margin: 3px;
+        font-size: 0.9em;
+        color: var(--primary);
+        transition: all 0.3s ease;
+      }
+
+      .skill-tag:hover {
+        background: var(--gradient);
+        color: white;
+        transform: translateY(-2px);
+      }
+
+      /* Fancy hover effects for job titles */
+      .job-title {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .job-title::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: var(--gradient);
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+      }
+
+      .job-title:hover::after {
+        transform: translateX(0);
       }
     </style>
   </head>
@@ -74,12 +308,12 @@
       <div class="section">
         <h2>🚀 Leadership | Product Development | Customer Experience</h2>
         <p>
-          Product Leader with over 20 years of experience at the
-          intersection of product development, customer engagement, and
-          operations. Proven track record in scaling teams, optimizing support
-          functions, and leading cross-functional projects in fast-paced
-          environments. Adept at integrating innovative technologies to enhance
-          user experiences and drive business growth.
+          Product Leader with over 20 years of experience at the intersection of
+          product development, customer engagement, and operations. Proven track
+          record in scaling teams, optimizing support functions, and leading
+          cross-functional projects in fast-paced environments. Adept at
+          integrating innovative technologies to enhance user experiences and
+          drive business growth.
         </p>
       </div>
 
@@ -91,7 +325,9 @@
             development, cross-functional team leadership
           </li>
           <li>
-          <strong>Innovation Integration:</strong> Implementing automation technologies to drive product advancement</li>
+            <strong>Innovation Integration:</strong> Implementing automation
+            technologies to drive product advancement
+          </li>
           <li>
             <strong>Strategic Collaboration:</strong> Partnering with
             stakeholders to align product initiatives with business objectives
@@ -110,29 +346,41 @@
       <div class="section">
         <h2>💼 Professional Experience</h2>
 
-        <p>
-          <span class="job-title"
-            >Senior Director of Customer & Support Operations</span
-          >
-          - <strong>Smartly.io</strong> <span class="date">(2021 – 2022)</span>
-        </p>
+        <div class="job-header">
+          <div class="job-title-wrapper">
+            Senior Director of Customer & Support Operations
+          </div>
+          <div class="company-info">
+            <span class="company-name">- Smartly.io</span>
+            <span class="date">(2021 – 2022)</span>
+          </div>
+        </div>
         <ul>
           <li>
             Led the development and execution of a hybrid support model,
-            integrating offshore teams, 2nd and 3rd level in-house and automation to enhance efficiency. </li>
+            integrating offshore teams, 2nd and 3rd level in-house and
+            automation to enhance efficiency.
+          </li>
           <li>
             Introduced a premium support offering, elevating the customer
-            experience for global clients. Fast response. Preferred cohort of agents. Skills Identification. Hiring and development. </li>
+            experience for global clients. Fast response. Preferred cohort of
+            agents. Skills Identification. Hiring and development.
+          </li>
           <li>
             Collaborated with cross-functional teams, including product,
             engineering, and customer success, to drive product improvements
-            based on user feedback. Led product development for feedback response. </li>
+            based on user feedback. Led product development for feedback
+            response.
+          </li>
         </ul>
 
-        <p>
-          <span class="job-title">Director of Customer Support</span> -
-          <strong>Smartly.io</strong> <span class="date">(2020 – 2021)</span>
-        </p>
+        <div class="job-header">
+          <div class="job-title-wrapper">Director of Customer Support</div>
+          <div class="company-info">
+            <span class="company-name">- Smartly.io</span>
+            <span class="date">(2020 – 2021)</span>
+          </div>
+        </div>
         <ul>
           <li>
             Scaled support operations from 150 to 700 employees, transitioning
@@ -148,14 +396,17 @@
           </li>
         </ul>
 
-        <p>
-          <span class="job-title">Global Account Director – Uber</span> -
-          <strong>Smartly.io</strong> <span class="date">(2017 – 2018)</span>
-        </p>
+        <div class="job-header">
+          <div class="job-title-wrapper">Global Account Director – Uber</div>
+          <div class="company-info">
+            <span class="company-name">- Smartly.io</span>
+            <span class="date">(2017 – 2018)</span>
+          </div>
+        </div>
         <ul>
           <li>
-            Managed global stakeholders, expanding Uber’s adoption of
-            Smartly.io’s ad tech solutions.
+            Managed global stakeholders, expanding Uber's adoption of
+            Smartly.io's ad tech solutions.
           </li>
           <li>
             Developed and executed strategies to increase product stickiness and
@@ -171,8 +422,14 @@
       <div class="section">
         <h2>📜 Education & Certifications</h2>
         <ul>
-          <li>  <strong>Master’s Degree</strong> in IT &amp; Networks – <strong>ECE Paris</strong> (2002-2003) </li>
-          <li>Various past professional certifications: Redhat, Oracle DBA, etc.&nbsp; &nbsp;</li>
+          <li>
+            <strong>Master's Degree</strong> in IT &amp; Networks –
+            <strong>ECE Paris</strong> (2002-2003)
+          </li>
+          <li>
+            Various past professional certifications: Redhat, Oracle DBA,
+            etc.&nbsp; &nbsp;
+          </li>
         </ul>
       </div>
 
