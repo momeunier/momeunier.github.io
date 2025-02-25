@@ -211,7 +211,7 @@ ul li::marker {
   color: #666;
 }
 
-.footer a {
+.fancy-link {
   color: var(--primary);
   text-decoration: none;
   padding: 5px 15px;
@@ -219,9 +219,13 @@ ul li::marker {
   transition: all 0.3s ease;
 }
 
-.footer a:hover {
+.fancy-link:hover {
   background: var(--gradient);
   color: white;
+}
+
+.footer a {
+  composes: fancy-link;
 }
 
 @media (max-width: 768px) {
